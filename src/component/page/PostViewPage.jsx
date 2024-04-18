@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
+import CommentList from "../list/CommentList";
 import TextInput from "../ui/TextInput";
 import Button from "../ui/Button";
 import data from "../../data.json"
-import CommentList from "../list/CommentList";
+
 
 const Wrapper = styled.div`
   padding: 16px;
-  width: calc(100% -32px);
+  width: calc(100% - 32px);
   display: flex;
   flex-direction:column;
   align-items: center;
@@ -18,7 +19,6 @@ const Wrapper = styled.div`
 const Container = styled.div`
   width: 100%;
   max-width: 720px;
-  background: red;
 
   & > * {
     :not(:last-child) {
@@ -54,7 +54,7 @@ function PostViewPage(props) {
   const { postId } = useParams();
 
   const post = data.find((item) => {
-    return item.id === postId;
+    return item.id == postId;
   });
 
   const [comment, setComment] = useState("");
@@ -76,7 +76,7 @@ function PostViewPage(props) {
         </PostContainer>
 
         <CommentLabel>댓글</CommentLabel>
-        <CommentList comment={post.comment} />
+        <CommentList comments={post.comments} />
 
         <TextInput
           height={40}

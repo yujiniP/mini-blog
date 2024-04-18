@@ -5,23 +5,23 @@ import TextInput from "../ui/TextInput";
 import Button from "../ui/Button";
 
 const Wrapper = styled.div`
-  width: calc(100% -32px);
-  padding: 16px;
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-  justify-content:center;
+    padding: 16px;
+    width: calc(100% - 32px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `;
 
 const Container = styled.div`
-  width: 100%;
-  max-width: 720px;
+    width: 100%;
+    max-width: 720px;
 
-  & > * {
-    :not(:last-child) {
-      margin-bottom: 16px;
+    & > * {
+        :not(:last-child){
+            margin-bottom: 16px;
+        }
     }
-  }
 `;
 
 function PostWritePage(props) {
@@ -40,6 +40,7 @@ function PostWritePage(props) {
             setTitle(event.target.value);
           }}
         />
+
         <TextInput
           height={480}
           value={content}
@@ -47,6 +48,7 @@ function PostWritePage(props) {
             setContent(event.target.value);
           }}
         />
+
         <Button
           title="글 작성하기"
           onClick={() => {

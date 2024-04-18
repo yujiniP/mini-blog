@@ -1,9 +1,13 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom"
 import styled from "styled-components";
-import MainPage from './component/page/MainPage';
-import PostWritePage from './component/page/PostWritePage';
-import PostViewPage from './component/page/PostViewPage';
+import MainPage from "./component/page/MainPage";
+import PostViewPage from "./component/page/PostViewPage";
+import PostWritePage from "./component/page/PostWritePage";
 
 const MainTitleText = styled.p`
   font-size: 24px;
@@ -11,11 +15,10 @@ const MainTitleText = styled.p`
   text-align: center;
 `;
 
-
 function App() {
   return (
     <BrowserRouter>
-      <MainTitleText>Eugenio blog</MainTitleText>
+      <MainTitleText>미니 블로그</MainTitleText>
       <Routes>
         <Route index element={<MainPage />} />
         <Route path="post-write" element={<PostWritePage />} />

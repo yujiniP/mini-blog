@@ -3,26 +3,26 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import PostList from "../list/PostList";
 import Button from "../ui/Button";
-import data from "../../data.json"
+import data from '../../data.json'
 
 const Wrapper = styled.div`
-  width: calc(100% -32px);
-  padding: 16px;
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-  justify-content:center;
+    padding: 16px;
+    width: calc(100% - 32px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `;
 
 const Container = styled.div`
-  width: 100%;
-  max-width: 720px;
+    width: 100%;
+    max-width: 720px;
 
-  & > * {
-    :not(:last-child) {
-      margin-bottom: 16px;
+    & > * {
+        :not(:last-child){
+            margin-bottom: 16px;
+        }
     }
-  }
 `;
 
 function MainPage(props) {
@@ -36,13 +36,13 @@ function MainPage(props) {
         <Button
           title="글 작성하기"
           onClick={() => {
-            navigate("/post-write")
+            navigate("/post-write");
           }}
         />
 
         <PostList
           posts={data}
-          onClick={(item) => {
+          onClickItem={(item) => {
             navigate(`/post/${item.id}`);
           }}
         />
